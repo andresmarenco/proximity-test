@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: vending-machine
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+
+
+vendingmachine:
+  machineType: XYZ2
+  securityCode: 1234
+  maxOpenAttempts: 2
+  validCoins: 5,10,25,50
+  validBills: 1,2
+  alertThreshold: 100

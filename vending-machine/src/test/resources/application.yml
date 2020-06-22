@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: vending-machine
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+
+server:
+  port: 0
+
+eureka:
+  client:
+    enabled: false
+
+
+vendingmachine:
+  machineType: XYZ1
+  securityCode: 1234
+  maxOpenAttempts: 2
+  validCoins: 5,10,25,50
+  validBills: 1,2
+  alertThreshold: 100
